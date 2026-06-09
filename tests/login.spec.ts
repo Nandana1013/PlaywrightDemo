@@ -4,9 +4,6 @@ import { url } from 'node:inspector';
 
 test('OrangeHRM Login Test', async ({ page }) => {
 
-  console.log(process.env.APP_USERNAME);
-  console.log(process.env.APP_PASSWORD);
-
   const loginPage = new LoginPage(page);
 
   await loginPage.navigateToLoginPage();

@@ -5,12 +5,21 @@ dotenv.config();
 
 export default defineConfig({
   testDir: './tests',
-  globalSetup: require.resolve('./tests/global.setup.spec.ts'),
+  projects: [
+    {
+      name: 'setup',
+      testMatch: /auth\.spec\.ts/,
+    },
+    {
+      //name: 'chromium',
+      //dependencies: ['setup'],
+      use: {
 
-  use: {
-    ...devices['Desktop Chrome'],
-    baseURL: 'https://opensource-demo.orangehrmlive.com/',
-    headless: false,
-    storageState: 'src/auth/auth.json',
-  },
+        ...devices['Desktop Chrome'],
+        baseURL: 'https://opensource-demo.orangehrmlive.com/',
+        headless: false,
+        storageState: 'src/auth/auth.json',
+      },
+    },
+  ],
 });

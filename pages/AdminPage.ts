@@ -9,18 +9,14 @@ export class AdminPage {
   //adminMenu = 'a[href="/web/index.php/admin/viewAdminModule"]';
 
   addButton = 'button:has-text("Add")';
-
   employeeNameInput = 'input[placeholder="Type for hints..."]';
-
   usernameInput = '.oxd-form input.oxd-input';
-
   passwordInput = 'input[type="password"]';
-
   saveButton = 'button[type="submit"]';
   searchUsernameInput = 'input.oxd-input.oxd-input--active';
-
- searchButton = 'button:has-text("Search")';
- resultTable = '.oxd-table-body';
+  searchButton = 'button:has-text("Search")';
+  resultTable = '.oxd-table-body';
+  admindeletebutton = '.oxd-icon bi-trash';
 
   // Methods
 
@@ -163,6 +159,10 @@ async editSecondUser(newUsername: string) {
   await this.page
     .getByRole('button', { name: 'Save' })
     .click();
+}
+
+async adminDelete(){
+  await this.page.locator(this.admindeletebutton).click();
 }
  
 }
