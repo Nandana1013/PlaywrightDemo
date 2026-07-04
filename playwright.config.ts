@@ -17,7 +17,7 @@ export default defineConfig({
 
         ...devices['Desktop Chrome'],
         baseURL: 'https://opensource-demo.orangehrmlive.com/',
-        headless: false,
+        headless: true,
         storageState: 'src/auth/auth.json',
       },
     },
